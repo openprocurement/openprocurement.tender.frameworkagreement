@@ -49,6 +49,6 @@ setup(name='openprocurement.tender.frameworkagreement',
       zip_safe=False,
       install_requires=requires,
       extras_require={'test': test_requires, 'docs': docs_requires},
-      #      test_suite="openprocurement.tender.frameworkagreement.tests.main.suite",
+      test_suite="openprocurement.tender.frameworkagreement.tests.main.suite",
       entry_points=entry_points,
       )
