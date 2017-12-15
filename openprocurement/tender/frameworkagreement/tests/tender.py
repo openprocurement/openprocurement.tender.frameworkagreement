@@ -2,7 +2,7 @@
 import unittest
 
 from openprocurement.api.tests.base import snitch
-
+from openprocurement.tender.belowthreshold.tests.tender import TenderResourceTestMixin
 from openprocurement.tender.frameworkagreement.tests.base import (
     test_tender_data, test_lots, test_bids,
     BaseFrameworkagreementWebTest, BaseFrameworkagreementContentWebTest,
@@ -22,10 +22,14 @@ class TenderFrameworkagreementTest(BaseFrameworkagreementWebTest):
     test_simple_add_tender = snitch(simple_add_tender)
 
 
+class TenderFATest(BaseFrameworkagreementContentWebTest, TenderResourceTestMixin):
+    """ Frameworkagreement tender test """
+
+
 def suite():
     suite = unittest.TestSuite()
     suite.addTest(unittest.makeSuite(TenderFrameworkagreementTest))
-    #suite.addTest(unittest.makeSuite(TestTenderEUProcess))
+    suite.addTest(unittest.makeSuite(TenderFATest))
     return suite
 
 
