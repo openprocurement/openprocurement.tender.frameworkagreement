@@ -24,6 +24,7 @@ class TenderFrameworkagreementTest(BaseFrameworkagreementWebTest):
 
 class TenderFATest(BaseFrameworkagreementContentWebTest, TenderResourceTestMixin):
     """ Frameworkagreement tender test """
+    initialize_initial_data = False
 
 
 def suite():
